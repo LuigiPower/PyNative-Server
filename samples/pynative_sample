@@ -13,10 +13,10 @@ from pynative.pynative import *
 
 pygna = PyNative()
 
-@pygna.app.route('/ciao', methods=['GET', 'POST'])
-def interfaceBuilder():
-    requestedScreenname = request.args.get('screenname')
-    requestedView = ViewBuilder(requestedScreenname, requestedScreenname)
+@pygna.flask.route('/<requestedScreenname>', methods=['GET', 'POST'])
+def interfaceBuilder(requestedScreenname):
+    #requestedScreenname = pygna.getRequestData('screenname')
+    requestedView = ViewBuilder(pygna, requestedScreenname, requestedScreenname)
 
     requestedView.addElement(ElementBuilder.createTextView("77", "Sono la schermata %s" % requestedScreenname))
 
@@ -24,7 +24,7 @@ def interfaceBuilder():
         requestedView.addElement(ElementBuilder.createTextView("%s" % (i * 2), "Asciugamani"))
         requestedView.addElement(ElementBuilder.createGotoButton("%d" % (i * 2 + 1), "GOTO %d" % i, "screen%d" % i))
 
-    return requestedView.toJson()
+    return requestedView.build()
 
 if __name__ == "__main__":
-    pygna.app.run(host="0.0.0.0", debug=True)
+    pygna.flask.run(host="0.0.0.0", debug=True)

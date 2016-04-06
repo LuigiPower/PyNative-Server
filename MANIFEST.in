@@ -1,0 +1,2 @@
+recursive-include pynative/static *
+recursive-include pynative/templates *

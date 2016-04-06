@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 from setuptools import setup, find_packages
@@ -18,7 +19,10 @@ setup(
     author_email='federico.giuggioloni@gmail.com',
     url='https://github.com/LuigiPower/PyNative-Server',
     scripts=['samples/pynative_sample'],
-    license=license,
-    packages=find_packages(exclude=('tests', 'docs'))
+    packages=find_packages(exclude=('tests', 'docs')),
+    include_package_data=True,
+    zip_safe=False,
+    install_requires=['Flask', 'Flask-Triangle'],
+    license=license
 )
 
