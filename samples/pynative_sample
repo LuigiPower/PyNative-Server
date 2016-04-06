@@ -1,30 +1,18 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from pynative.pynative import *
-
-
-#app = Flask(__name__)
-# el_type, el_id, el_text, el_action_type, el_action_screen
-#cose = []
-#for i in range(0, 10):
-#	cose.append(ElementBuilder("button", "42", "Asciugamani", "goto", "view2").getElement())
-#	cose.append(ElementBuilder("textView", "43", "Ciao", "", "").getElement())
+from pynative.pynative import PyNative
+from pynative.views import *
 
 pygna = PyNative()
 
 @pygna.flask.route('/<requestedScreenname>', methods=['GET', 'POST'])
 def interfaceBuilder(requestedScreenname):
-    #requestedScreenname = pygna.getRequestData('screenname')
-    requestedView = ViewBuilder(pygna, requestedScreenname, requestedScreenname)
-
-    requestedView.addElement(ElementBuilder.createTextView("77", "Sono la schermata %s" % requestedScreenname))
-
-    for i in range(0, 10):
-        requestedView.addElement(ElementBuilder.createTextView("%s" % (i * 2), "Asciugamani"))
-        requestedView.addElement(ElementBuilder.createGotoButton("%d" % (i * 2 + 1), "GOTO %d" % i, "screen%d" % i))
-
-    return requestedView.build()
+    screen = Screen()
+    screen.add_view(TextView("Ciao"))
+    screen.add_view(Button("Sono qui"))
+    screen.add_view(TextView())
+    return pygna.render(screen)
 
 if __name__ == "__main__":
     pygna.flask.run(host="0.0.0.0", debug=True)

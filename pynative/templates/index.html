@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
 
-    <title>{{ screentitle }}</title>
+    <title>{{ pagetitle }}</title>
 
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.4/angular-material.css">
     <link rel="stylesheet" href="/static/css/style.css">
@@ -20,14 +20,15 @@
                     <md-icon md-svg-icon="static/res/icons/ic_arrow_back_white_24px.svg" ng-disabled="!isBackstackAvailable()"></md-icon>
                 </md-button>
                 <h2>
-                    {{ screentitle }}
+                    {{ dataFromPython.title | angular }}
                 </h2>
             </div>
         </md-toolbar>
 
         <md-content layout="column" layout-align="top center" id="main-area">
-            <div ng-repeat="element in dataFromPython">
+            <div ng-repeat="view in dataFromPython['layout']['views']">
                 <!-- TODO creare una direttiva per fare l'interfaccia -->
+                ciao {{view | angular}}
             </div>
         </md-content>
 
