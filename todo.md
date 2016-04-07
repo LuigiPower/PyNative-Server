@@ -3,17 +3,17 @@ Using Android classes as reference
 This list is for the web implementation of the views, a tick means "supported"
 
 # Views
-- [ ] View
-- [ ] TextView
+- [X] View
+- [X] TextView
 - [ ] EditText
 - [ ] Checkbox
 - [ ] RadioButton
-- [ ] Button
+- [X] Button
 - [ ] ImageButton
 - [ ] ImageView
 
 # Composites
-- [ ] ViewGroup
+- [X] ViewGroup
 - [ ] LinearLayout
 - [ ] RelativeLayout (?)
 - [ ] ScrollView
