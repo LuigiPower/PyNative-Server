@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="pyNative">
+<html ng-app="pynative">
 <head>
     <meta charset="UTF-8"></meta>
     <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0">
@@ -26,10 +26,7 @@
         </md-toolbar>
 
         <md-content layout="column" layout-align="top center" id="main-area">
-            <div ng-repeat="view in dataFromPython['layout']['views']">
-                <!-- TODO creare una direttiva per fare l'interfaccia -->
-                ciao {{view | angular}}
-            </div>
+            <viewgroup viewdata="dataFromPython"></viewgroup>
         </md-content>
 
     </md-content>
@@ -56,5 +53,10 @@
     <script src="/static/js/services/utility-service.js"></script>
     <script src="/static/js/services/ajax-service.js"></script>
     <script src="/static/js/controllers/session-controller.js"></script>
+    <script src="/static/js/controllers/view-controller.js"></script>
+    <script src="/static/js/directives/view.js"></script>
+    <script src="/static/js/directives/viewgroup.js"></script>
+    <script src="/static/js/directives/textview.js"></script>
+    <script src="/static/js/directives/button.js"></script>
 
 </html>

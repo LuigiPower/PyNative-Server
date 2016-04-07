@@ -8,7 +8,7 @@
         $scope.isBackstackAvailable = function()
         {
             return session.screenStack.length > 0;
-        }
+        };
 
         $scope.title = "I'm a title!";
 
@@ -27,6 +27,7 @@
             session.goBack();
         };
 
+        /** TODO Da cambiare per le schermate create dal json... **/
         $scope.isStartScreen = function()
         {
             return session.screen === session.SESSION_START;

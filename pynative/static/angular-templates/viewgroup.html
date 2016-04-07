@@ -1,0 +1,10 @@
+<div class="button">
+    <md-content layout="column" layout-align="center left">
+        <div ng-repeat="view in getViews()">
+            <view ng-if="isOfType(view.type, VIEW) || isUnknown(view.type)" viewdata="view"></view>
+            <textview ng-if="isOfType(view.type, TEXTVIEW)" viewdata="view"></textview>
+            <buttonview ng-if="isOfType(view.type, BUTTON)" viewdata="view"></buttonview>
+            <viewgroup ng-if="isOfType(view.type, VIEWGROUP)" viewdata="view"></viewgroup>
+        </div>
+    </md-content>
+</div>

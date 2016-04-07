@@ -31,8 +31,10 @@ class Screen(object):
         self.data = {
                 "screenname": name,
                 "title": title,
-                "layout": {
-                    "views": []
+                "parameters": {
+                    "layout": {
+                        "views": []
+                        }
                     }
                 }
 
@@ -40,7 +42,7 @@ class Screen(object):
 
     def add_view(self, view):
         self.views.append(view)
-        self.data['layout']['views'].append(view.data)
+        self.data['parameters']['layout']['views'].append(view.data)
         print "Data is %s" % json.dumps(self.data)
 
     def get_type(self):

@@ -1,7 +1,7 @@
 (function(){
 	"use strict";
 
-	var app = angular.module('pyNative', [
+	var app = angular.module('pynative', [
 		'ngMaterial', 'session-module', 'utility-module',
                 'python-module'
 	]);
