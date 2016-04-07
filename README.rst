@@ -1,5 +1,4 @@
 PyNativeServer Module Repository
 ========================
 
-This simple project is an example repo for Python projects.
-
+Parte server del progetto PyNative
