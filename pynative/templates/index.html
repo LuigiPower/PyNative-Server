@@ -10,11 +10,8 @@
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.4/angular-material.css">
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
-<body>
-
-    <md-content layout="column" flex="100" id="global-container" ng-controller="SessionController">
-
-        <md-toolbar>
+<body ng-controller="SessionController">
+    <md-toolbar>
             <div class="md-toolbar-tools">
                 <md-button ng-click="goBack()" aria-label="Settings">
                     <md-icon md-svg-icon="static/res/icons/ic_arrow_back_white_24px.svg" ng-disabled="!isBackstackAvailable()"></md-icon>
@@ -23,7 +20,9 @@
                     {{ dataFromPython.title | angular }}
                 </h2>
             </div>
-        </md-toolbar>
+    </md-toolbar>
+
+    <md-content layout="column" flex="100" id="global-container">
 
         <md-content layout="column" layout-align="top center" id="main-area">
             <viewgroup viewdata="dataFromPython"></viewgroup>

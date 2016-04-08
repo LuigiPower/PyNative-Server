@@ -56,7 +56,9 @@ class Screen(object):
 
 class View(object):
 
-    def __init__(self, vid = "__", start_data = {}):
+    def __init__(self, vid = "__", start_data = None):
+        if start_data is None:
+            start_data = {}
         start_data['id'] = vid
         start_data['type'] = self.get_type()
         start_data['parameters'] = {}
@@ -77,7 +79,7 @@ class View(object):
 
 class TextView(View):
 
-    def __init__(self, text = "TextView", vid = "__", start_data = {}):
+    def __init__(self, text = "TextView", vid = "__", start_data = None):
         super(TextView, self).__init__(vid = vid, start_data = start_data)
 
         self.data['parameters']['text'] = text
@@ -87,7 +89,7 @@ class TextView(View):
 
 class Button(TextView):
 
-    def __init__(self, text = "Button", vid = "__", start_data = {}):
+    def __init__(self, text = "Button", vid = "__", start_data = None):
         super(Button, self).__init__(text = text, vid = vid, start_data = start_data)
 
     def add_event(self, event_type, event_action):   #TODO create a class Action for event_action?
@@ -100,7 +102,7 @@ class Button(TextView):
 
 class ViewGroup(View):
 
-    def __init__(self, vid = "__", start_data = {}):
+    def __init__(self, vid = "__", start_data = None):
         super(ViewGroup, self).__init__(vid = vid, start_data = start_data)
 
         self.data['parameters']['layout'] = {}
