@@ -6,8 +6,8 @@ This list is for the web implementation of the views, a tick means "supported"
 - [X] View
 - [X] TextView
 - [ ] EditText
-- [ ] Checkbox
-- [ ] RadioButton
+- [X] Checkbox
+- [X] RadioButton
 - [X] Button
 - [ ] ImageButton
 - [ ] ImageView

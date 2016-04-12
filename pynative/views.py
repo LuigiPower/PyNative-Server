@@ -87,6 +87,10 @@ class TextView(View):
     def set_text(self, text):
         self.data['parameters']['text'] = text
 
+    # data must be an array of dictionary
+    def set_data(self, data):
+        self.data['parameters']['data'] = data
+
 class Button(TextView):
 
     def __init__(self, text = "Button", vid = "__", start_data = None):
@@ -99,6 +103,17 @@ class Button(TextView):
         """
 
         self.data['parameters']['events'].update({ event_type: event_action })
+
+class Checkbox(TextView):
+
+    def __init__(self, text = "Checkbox", vid = "__", start_data = None):
+        super(Checkbox, self).__init__(text = text, vid = vid, start_data = start_data)
+
+class RadioButton(TextView):
+
+    def __init__(self, text = "RadioButton", vid = "__", start_data = None):
+        super(RadioButton, self).__init__(text = text, vid = vid, start_data = start_data)
+
 
 class ViewGroup(View):
 

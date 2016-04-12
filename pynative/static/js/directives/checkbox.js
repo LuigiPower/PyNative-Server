@@ -3,10 +3,10 @@
 
     var app = angular.module("pynative");
 
-    app.directive("buttonview", function() {
+    app.directive("checkboxview", function() {
         return {
             controller: "ViewController",
-            templateUrl: "/static/angular-templates/buttonview.html",
+            templateUrl: "/static/angular-templates/checkbox.html",
             restrict: "E",
             scope: {
                 viewdata: "=viewdata"

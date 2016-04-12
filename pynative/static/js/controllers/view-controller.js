@@ -11,12 +11,17 @@
         $scope.VIEW = "view";
         $scope.TEXTVIEW = "textview";
         $scope.BUTTON = "button";
+        $scope.CHECKBOX = "checkbox";
+        $scope.RADIOBUTTON = "radiobutton"
+
 
         $scope.isUnknown = function(view)
         {
             return !($scope.isOfType(view, $scope.VIEW)
                     || $scope.isOfType(view, $scope.TEXTVIEW)
-                    || $scope.isOfType(view, $scope.BUTTON))
+                    || $scope.isOfType(view, $scope.BUTTON)
+                    || $scope.isOfType(view, $scope.CHECKBOX)
+                    || $scope.isOfType(view, $scope.RADIOBUTTON))
         };
 
         $scope.isOfType = function(viewtype, viewcompare)
@@ -55,7 +60,6 @@
         {
             return $scope.viewdata['parameters']['events'];
         };
-
     }]);
 
 })();
