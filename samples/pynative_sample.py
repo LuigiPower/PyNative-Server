@@ -6,6 +6,16 @@ from pynative.views import *
 
 pygna = PyNative()
 
+@pygna.flask.route('/image/<imagename>.<imagetype>')
+def getImage(imagename, imagetype):
+	print "hey %s %s" % (imagename, imagetype)
+	return pygna.getImage(imagename + "." + imagetype, imagetype)
+
+# @pygna.flask.route('/icon/<imagename>')
+# def getImage(imagename, imagetype):
+# 	return pygna.getImage(imagename, "icon")
+
+
 @pygna.flask.route('/<requestedScreenname>', methods=['GET', 'POST'])
 def interfaceBuilder(requestedScreenname):
     screen = Screen()
@@ -26,15 +36,18 @@ Sed sit amet venenatis ligula, eu sollicitudin metus. Integer facilisis felis eg
     	{"label": "Miao2", "value": "Miao2"},
     	{"label": "Miao3", "value": "Miao3"},
     ]
-
+    imgpath = "/image/miaomiao.png"
     ckb = Checkbox("Miao")
     rdb = RadioButton("")
-    rdb.set_data(data_radiobutton)    
+    rdb.set_data(data_radiobutton) 
+    img = ImageView(imgpath)
+
     screen.add_view(TextView("Ciao Mondo"))
     screen.add_view(TextView(loremipsum))
     screen.add_view(Button("Avanti"))
     screen.add_view(ckb)
     screen.add_view(rdb)
+    screen.add_view(img)
     return pygna.render(screen)
 
 if __name__ == "__main__":

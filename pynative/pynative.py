@@ -1,7 +1,9 @@
 import json
+import os
 from flask import Flask
 from flask import request
 from flask import render_template
+from flask import send_file
 from flask.ext.triangle import Triangle
 
 class PyNative():
@@ -15,6 +17,12 @@ class PyNative():
 
     def getHeader(self, value):
         return request.headers.get(value)
+
+    def getImage(self, filename, imgType):
+        realpath = os.path.abspath(filename)
+        if imgType == "svg":
+            imgType = imgType + "+xml"
+        return send_file(realpath, mimetype='image/' + imgType)
 
     def render(self, screen):
         mimetype = self.getHeader('Content-Type')

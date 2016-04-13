@@ -1,0 +1,8 @@
+<div class="imageview">
+    <md-content layout="column" layout-align="center left">
+        <img ng-if="!getParameter('text')" ng-src="{{getParameter('imagePath')}}">
+        <md-icon ng-if="getParameter('text')" md-svg-icon="{{getParameter('imagePath')}}">
+        	{{getParameter('text')}}CIAO CAZZO
+        </md-icon>
+    </md-content>
+</div>

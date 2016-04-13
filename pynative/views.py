@@ -43,7 +43,7 @@ class Screen(object):
     def add_view(self, view):
         self.views.append(view)
         self.data['parameters']['layout']['views'].append(view.data)
-        print "Data is %s" % json.dumps(self.data)
+        # print "Data is %s" % json.dumps(self.data)
 
     def get_type(self):
         return self.__name__.lower()
@@ -90,6 +90,15 @@ class TextView(View):
     # data must be an array of dictionary
     def set_data(self, data):
         self.data['parameters']['data'] = data
+
+class ImageView(View):
+
+    def __init__(self, imagePath="./", text = "", vid = "__", start_data = None):
+        super(ImageView, self).__init__(vid = vid, start_data = start_data)
+
+        self.data['parameters']['imagePath'] = imagePath
+        self.data['parameters']['text'] = text
+
 
 class Button(TextView):
 

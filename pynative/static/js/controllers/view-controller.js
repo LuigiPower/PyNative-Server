@@ -13,6 +13,7 @@
         $scope.BUTTON = "button";
         $scope.CHECKBOX = "checkbox";
         $scope.RADIOBUTTON = "radiobutton"
+        $scope.IMAGE = "imageview"
 
 
         $scope.isUnknown = function(view)
@@ -21,7 +22,8 @@
                     || $scope.isOfType(view, $scope.TEXTVIEW)
                     || $scope.isOfType(view, $scope.BUTTON)
                     || $scope.isOfType(view, $scope.CHECKBOX)
-                    || $scope.isOfType(view, $scope.RADIOBUTTON))
+                    || $scope.isOfType(view, $scope.RADIOBUTTON)
+                    || $scope.isOfType(view, $scope.IMAGE))
         };
 
         $scope.isOfType = function(viewtype, viewcompare)
