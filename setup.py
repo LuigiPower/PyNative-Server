@@ -12,7 +12,7 @@ with open('LICENSE.md') as f:
 
 setup(
     name='PyNative',
-    version='0.0.1',
+    version='0.0.2',
     description='PyNative library',
     long_description=readme,
     author='Federico Giuggioloni',
