@@ -137,3 +137,12 @@ class ViewGroup(View):
         self.views.append(view)
         self.data['parameters']['layout']['views'].append(view.data)
 
+
+class LinearLayout(ViewGroup):
+
+    def __init__(self, vid = "__", start_data = None, layout = "vertical"):
+        super(LinearLayout, self).__init__(vid = vid, start_data = start_data)
+
+        self.data['parameters']['layout']['orientation'] = layout
+
+

@@ -12,8 +12,11 @@
         $scope.TEXTVIEW = "textview";
         $scope.BUTTON = "button";
         $scope.CHECKBOX = "checkbox";
-        $scope.RADIOBUTTON = "radiobutton"
-        $scope.IMAGE = "imageview"
+        $scope.RADIOBUTTON = "radiobutton";
+        $scope.IMAGE = "imageview";
+        $scope.VIEWGROUP = "viewgroup";
+        $scope.LINEARLAYOUT = "linearlayout";
+        $scope.VIEWSWITCHER = "viewswitcher";
 
 
         $scope.isUnknown = function(view)
@@ -23,7 +26,11 @@
                     || $scope.isOfType(view, $scope.BUTTON)
                     || $scope.isOfType(view, $scope.CHECKBOX)
                     || $scope.isOfType(view, $scope.RADIOBUTTON)
-                    || $scope.isOfType(view, $scope.IMAGE))
+                    || $scope.isOfType(view, $scope.IMAGE)
+                    || $scope.isOfType(view, $scope.VIEWGROUP)
+                    || $scope.isOfType(view, $scope.LINEARLAYOUT)
+                    || $scope.isOfType(view, $scope.)
+                );
         };
 
         $scope.isOfType = function(viewtype, viewcompare)

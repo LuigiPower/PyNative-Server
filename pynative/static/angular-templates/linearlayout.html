@@ -1,5 +1,5 @@
-<div class="viewgroup">
-    <md-content layout="column" layout-align="center left">
+<div class="linearlayout">
+    <md-content layout="getLayout()['orientation']" layout-align="center left">
         <div ng-repeat="view in getViews()">
             <viewswitcher></viewswitcher>
         </div>
