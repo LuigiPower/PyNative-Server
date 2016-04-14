@@ -18,7 +18,6 @@ setup(
     author='Federico Giuggioloni',
     author_email='federico.giuggioloni@gmail.com',
     url='https://github.com/LuigiPower/PyNative-Server',
-    scripts=['samples/pynative_sample'],
     packages=find_packages(exclude=('tests', 'docs')),
     include_package_data=True,
     zip_safe=False,

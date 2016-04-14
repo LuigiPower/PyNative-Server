@@ -39,7 +39,7 @@ Sed sit amet venenatis ligula, eu sollicitudin metus. Integer facilisis felis eg
     imgpath = "/image/miaomiao.png"
     ckb = Checkbox("Miao")
     rdb = RadioButton("")
-    rdb.set_data(data_radiobutton) 
+    rdb.set_data(data_radiobutton)
     img = ImageView(imgpath)
 
     screen.add_view(TextView("Ciao Mondo"))
