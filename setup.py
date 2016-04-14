@@ -12,12 +12,13 @@ with open('LICENSE.md') as f:
 
 setup(
     name='PyNative',
-    version='0.0.1',
+    version='0.0.2',
     description='PyNative library',
     long_description=readme,
     author='Federico Giuggioloni',
     author_email='federico.giuggioloni@gmail.com',
     url='https://github.com/LuigiPower/PyNative-Server',
+    scripts=['samples/pynative_sample'],
     packages=find_packages(exclude=('tests', 'docs')),
     include_package_data=True,
     zip_safe=False,
