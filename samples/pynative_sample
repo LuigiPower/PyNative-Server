@@ -31,15 +31,15 @@ In molestie tellus vel felis pellentesque mollis. Proin convallis dui et urna po
 
 Sed sit amet venenatis ligula, eu sollicitudin metus. Integer facilisis felis eget est hendrerit mollis. Mauris euismod tincidunt ligula, at volutpat ex feugiat vitae. Donec eu erat ligula. Suspendisse laoreet enim a orci congue, in molestie neque ornare. Etiam dolor est, rutrum eleifend maximus vel, dapibus ac leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi venenatis justo sit amet odio egestas imperdiet. Phasellus dapibus id felis a feugiat. In vulputate pharetra libero. Suspendisse elementum a lacus id dignissim.
     """
-    data_radiobutton = [
-    	{"label": "Miao", "value": "Miao"},
-    	{"label": "Miao2", "value": "Miao2"},
-    	{"label": "Miao3", "value": "Miao3"},
-    ]
-    imgpath = "/image/miaomiao.png"
-    ckb = Checkbox("Miao")
-    rdb = RadioButton("")
-    rdb.set_data(data_radiobutton)
+
+    imgpath = "/image/test.png"
+
+    ckb = Checkbox("Checkbox")
+    rdb = RadioGroup("Test radio group")
+    rdb.add_choice("Choice 1", "value1")
+    rdb.add_choice("Choice 2", "value2")
+    rdb.add_choice("Choice 3", "value3")
+
     img = ImageView(imgpath)
 
     screen.add_view(TextView("Ciao Mondo"))
@@ -51,4 +51,4 @@ Sed sit amet venenatis ligula, eu sollicitudin metus. Integer facilisis felis eg
     return pygna.render(screen)
 
 if __name__ == "__main__":
-    pygna.flask.run(host="0.0.0.0", debug=False)
+    pygna.flask.run(host="0.0.0.0", debug=True)

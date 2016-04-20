@@ -1,7 +1,7 @@
 <div class="radiobutton">
     <md-content layout="column" layout-align="center left">
     <md-radio-group class="md-primary">
-        <md-radio-button ng-repeat="r in getParameter('data')" ng-value="r.value">
+        <md-radio-button ng-repeat="r in getParameter('choices')" ng-value="r.value">
         	{{r.label}}
         </md-radio-button>
     </md-radio-group>

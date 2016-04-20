@@ -118,11 +118,15 @@ class Checkbox(TextView):
     def __init__(self, text = "Checkbox", vid = "__", start_data = None):
         super(Checkbox, self).__init__(text = text, vid = vid, start_data = start_data)
 
-class RadioButton(TextView):
+class RadioGroup(TextView):
 
-    def __init__(self, text = "RadioButton", vid = "__", start_data = None):
-        super(RadioButton, self).__init__(text = text, vid = vid, start_data = start_data)
+    def __init__(self, text = "RadioGroup", vid = "__", start_data = None):
+        super(RadioGroup, self).__init__(text = text, vid = vid, start_data = start_data)
 
+        self.data['parameters']['choices'] = []
+
+    def add_choice(self, text, value):
+        self.data['parameters']['choices'].append({ 'label': text, 'value': value})
 
 class ViewGroup(View):
 

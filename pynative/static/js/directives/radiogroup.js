@@ -3,10 +3,10 @@
 
     var app = angular.module("pynative");
 
-    app.directive("radiobuttonview", function() {
+    app.directive("radiogroupview", function() {
         return {
             controller: "ViewController",
-            templateUrl: "/static/angular-templates/radiobutton.html",
+            templateUrl: "/static/angular-templates/radiogroup.html",
             restrict: "E",
             scope: {
                 viewdata: "=viewdata"
