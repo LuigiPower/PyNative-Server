@@ -6,6 +6,16 @@ from pynative.views import *
 
 pygna = PyNative()
 
+@pygna.flask.route('/image/<imagename>.<imagetype>')
+def getImage(imagename, imagetype):
+	print "hey %s %s" % (imagename, imagetype)
+	return pygna.getImage(imagename + "." + imagetype, imagetype)
+
+# @pygna.flask.route('/icon/<imagename>')
+# def getImage(imagename, imagetype):
+# 	return pygna.getImage(imagename, "icon")
+
+
 @pygna.flask.route('/<requestedScreenname>', methods=['GET', 'POST'])
 def interfaceBuilder(requestedScreenname):
     screen = Screen()
@@ -20,11 +30,24 @@ Proin lacinia lorem sed lorem ornare vehicula. Sed rhoncus, ipsum vel euismod fa
 In molestie tellus vel felis pellentesque mollis. Proin convallis dui et urna porta laoreet. Sed sagittis aliquet finibus. Nulla id leo eros. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec pulvinar, ipsum in vehicula varius, sapien urna iaculis felis, id gravida tellus mauris sed arcu. Praesent molestie sapien sit amet est bibendum convallis. Vivamus aliquet id quam sed pellentesque. Quisque dignissim volutpat dolor, eu condimentum risus fermentum vitae. Nam urna odio, sollicitudin a gravida in, condimentum at magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer vitae consequat nisl. Nunc tellus quam, facilisis fermentum metus ut, mattis vestibulum nunc. Curabitur at ipsum et augue consequat lacinia.
 
 Sed sit amet venenatis ligula, eu sollicitudin metus. Integer facilisis felis eget est hendrerit mollis. Mauris euismod tincidunt ligula, at volutpat ex feugiat vitae. Donec eu erat ligula. Suspendisse laoreet enim a orci congue, in molestie neque ornare. Etiam dolor est, rutrum eleifend maximus vel, dapibus ac leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi venenatis justo sit amet odio egestas imperdiet. Phasellus dapibus id felis a feugiat. In vulputate pharetra libero. Suspendisse elementum a lacus id dignissim.
-        """
+    """
+    data_radiobutton = [
+    	{"label": "Miao", "value": "Miao"},
+    	{"label": "Miao2", "value": "Miao2"},
+    	{"label": "Miao3", "value": "Miao3"},
+    ]
+    imgpath = "/image/miaomiao.png"
+    ckb = Checkbox("Miao")
+    rdb = RadioButton("")
+    rdb.set_data(data_radiobutton)
+    img = ImageView(imgpath)
 
     screen.add_view(TextView("Ciao Mondo"))
-    screen.add_view(TextView(loremipsum))
+    #screen.add_view(TextView(loremipsum))  #TODO controllare che io con firefox non vedo le checkbox dopo
     screen.add_view(Button("Avanti"))
+    screen.add_view(ckb)
+    screen.add_view(rdb)
+    screen.add_view(img)
     return pygna.render(screen)
 
 if __name__ == "__main__":
