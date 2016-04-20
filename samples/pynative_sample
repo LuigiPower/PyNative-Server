@@ -51,4 +51,4 @@ Sed sit amet venenatis ligula, eu sollicitudin metus. Integer facilisis felis eg
     return pygna.render(screen)
 
 if __name__ == "__main__":
-    pygna.flask.run(host="0.0.0.0", debug=True)
+    pygna.flask.run(host="0.0.0.0", debug=False)
